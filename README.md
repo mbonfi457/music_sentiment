@@ -1,6 +1,8 @@
 # music_sentiment.py
 A Python program that plots the NLTK sentiment analysis of a selection of music, given the song name(s) and album title(s)
 
+The main script is found in ```main.py``` (makes sense)
+
 Simply create a CSV file with columns labeled "Song" and "Album" to read in. You'll also need a client token from Genius API (https://docs.genius.com/#/authentication-h1).
 Paste your client token into the variable within api_key.py, or add it straight into the ```GENIUS_API_TOKEN``` variable. Reading the CSV file into the Genius API will automatically search and add the lyrics to the list.
 
