@@ -1,0 +1,13 @@
+# music_sentiment.py
+A Python program that plots the NLTK sentiment analysis of a selection of music, given the song name(s) and album title(s)
+
+Simply create a CSV file with columns labeled "Song" and "Album" to read in. You'll also need a client token from Genius API (https://docs.genius.com/#/authentication-h1).
+Paste your client token into the variable within api_key.py, or add it straight into the ```GENIUS_API_TOKEN``` variable. Reading the CSV file into the Genius API will automatically search and add the lyrics to the list.
+
+Using the ```textblob``` package, the lyrics will be fed into the NLTK sentiment analyzer and each song will be evaluated for its sentiment on a scale from -1 to +1, where a more positive value represents positive sentiment.
+More info on the ```textblob``` sentiment analysis can be found at https://textblob.readthedocs.io/en/dev/api_reference.html#textblob.blob.TextBlob.sentiment.
+
+### Plotting the data
+By default, the ```seaborn``` package is utilized to plot the sentiment values as a box plot, categorized by album. However, this can be changed as desired.
+
+Anyways, that's it for now. This was my first worthy project that I've committed to a repo. Let me know how I did.
