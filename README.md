@@ -12,4 +12,5 @@ More info on the ```textblob``` sentiment analysis can be found at https://textb
 ### Plotting the data
 By default, the ```seaborn``` package is utilized to plot the sentiment values as a box plot, categorized by album. However, this can be changed as desired.
 
-Anyways, that's it for now. This was my first worthy project that I've committed to a repo. Let me know how I did.
+### TODO
+Add a Streamlit GUI to enable drag-and-drop functionality for the input file
