@@ -9,6 +9,9 @@ Paste your client token into the variable within api_key.py, or add it straight 
 Using the ```textblob``` package, the lyrics will be fed into the NLTK sentiment analyzer and each song will be evaluated for its sentiment on a scale from -1 to +1, where a more positive value represents positive sentiment.
 More info on the ```textblob``` sentiment analysis can be found at https://textblob.readthedocs.io/en/dev/api_reference.html#textblob.blob.TextBlob.sentiment.
 
+### Input data
+The expected input is a CSV file with columns ```Song``` and ```Album```.
+
 ### Plotting the data
 By default, the ```seaborn``` package is utilized to plot the sentiment values as a box plot, categorized by album. However, this can be changed as desired.
 
