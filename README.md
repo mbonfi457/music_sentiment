@@ -10,7 +10,7 @@ Using the ```textblob``` package, the lyrics will be fed into the NLTK sentiment
 More info on the ```textblob``` sentiment analysis can be found at https://textblob.readthedocs.io/en/dev/api_reference.html#textblob.blob.TextBlob.sentiment.
 
 ### Input data
-The expected input is a CSV file with columns ```Song``` and ```Album```.
+The expected input is a CSV file with columns ```Song``` and ```Album```. I've provided an example CSV file that features most of Mac Miller's discography.
 
 ### Plotting the data
 By default, the ```seaborn``` package is utilized to plot the sentiment values as a box plot, categorized by album. However, this can be changed as desired.
