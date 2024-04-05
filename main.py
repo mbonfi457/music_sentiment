@@ -2,21 +2,15 @@ import pandas as pd
 import lyricsgenius
 import matplotlib.pyplot as plt
 import seaborn as sns
-
 from textblob import TextBlob
 
-
-# Replace with your own Genius API access token
-import api_key
-
-GENIUS_API_TOKEN = api_key.CLIENT_ACCESS_TOKEN
-
+# Replace 'YOUR_API_KEY' with your actual Genius API access token
+GENIUS_API_TOKEN = 'YOUR_API_KEY'
 
 # Read CSV file containing song names and album names
 def read_csv(csv_file):
     df = pd.read_csv(csv_file)
     return df
-
 
 # Fetch lyrics for a given song using LyricsGenius
 def fetch_lyrics(song_name):
@@ -28,16 +22,14 @@ def fetch_lyrics(song_name):
     else:
         return None
 
-
 # Perform sentiment analysis using TextBlob
 def perform_sentiment_analysis(text):
     blob = TextBlob(text)
     sentiment_score = blob.sentiment.polarity
     return sentiment_score
 
-
 if __name__ == '__main__':
-    csv_file = '/your/csv/file/path.csv'  # Replace with your CSV file path
+    csv_file = "your/file/path/to/CSV" # Replace with your CSV file path
     df = read_csv(csv_file)
 
     sentiment_scores = []
@@ -58,21 +50,20 @@ if __name__ == '__main__':
 
     sentiment_df = pd.DataFrame(sentiment_scores)
 
-    sns.set(style="whitegrid")
+plt.figure(figsize=(10,6), facecolor='lightgrey')
+sns.boxplot(x='album_name', y='sentiment_score', hue = 'album_name', data=sentiment_df, palette='flare')
+sns.stripplot(x='album_name', y='sentiment_score', data=sentiment_df, color='black')
+sns.set_theme(style='darkgrid')
 
-    plt.figure(figsize=(10,6))
-    sns.boxplot(x='album_name', y='sentiment_score', data=sentiment_df)
+# Add labels and title
+plt.xlabel('Album Name')
+plt.ylabel('Sentiment Score')
+plt.tight_layout()
 
-    # Add labels and title
-    plt.xlabel('Album Name')
-    plt.ylabel('Sentiment Score')
-    plt.title("Sentiment Score")
+# Rotate x-axis labels for better visibility
+plt.xticks(rotation=45)
 
-    # Rotate x-axis labels for better visibility
-    plt.xticks(rotation=45)
-
-    plt.subplots_adjust(bottom=0.38)
-    # unhash the line below to save the figure in your current directory
-    #plt.savefig('Mac_boxplot.pdf')
-    plt.show()
-
+plt.subplots_adjust(bottom=0.38)
+# unhash the line below to save the figure in your current directory
+#plt.savefig('Mac_boxplot.pdf')
+plt.show()
